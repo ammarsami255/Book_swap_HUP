@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Swapping Hub</title>
+    <link rel="stylesheet" href="main_1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <p>Book Swapping Hub</p>
+    </div>
+    
+    <div class="cont">
+        <div>
+            <label for="book_name">Book Title</label>
+            <input type="text" name="book_name" id="book_name">
+        </div>
+        <div>
+            <label for="book_des">Book Description</label>
+            <input type="text" name="book_des" id="book_des">
+        </div>
+        <div>
+            <label for="book_type">Book Type</label>
+            <input type="text" name="book_type" id="book_type">
+        </div>
+        <div>
+            <label for="book_photo">Book Photo</label>
+            <input type="file" name="book_photo" id="book_photo" accept="image/*">
+        </div>
+        <div>
+            <button onclick="ok()">Submit</button>
+        </div>
+    </div>
+    
+    <script>
+        function ok() {
+            const bookName = document.getElementById("book_name").value;
+        const bookDesc = document.getElementById("book_des").value;
+        const bookType = document.getElementById("book_type").value;
+        const bookPhoto = document.getElementById("book_photo").files[0];
+        const submittedBy = prompt("Please enter your name:"); // Prompt for the user's name
+
+        if (bookName && bookDesc && bookType && bookPhoto && submittedBy) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const bookData = {
+                    name: bookName,
+                    description: bookDesc,
+                    type: bookType,
+                    photo: reader.result, // Base64 encoded image
+                    submittedBy: submittedBy
+                };
+                let books = JSON.parse(localStorage.getItem("books")) || [];
+                books.push(bookData);
+                localStorage.setItem("books", JSON.stringify(books));
+                alert("Book details submitted successfully!");
+                window.location.href = "main_2.html";
+            };
+            reader.readAsDataURL(bookPhoto);
+        } else {
+            alert("Please fill all fields and upload a photo.");
+        }
+    }
+    </script>
+</body>
+
+</html>

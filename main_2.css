@@ -1,0 +1,98 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Header Styling */
+.header {
+    position: fixed;
+    padding: 20px;
+    width: 100%;
+    background-color: #d75246;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header p {
+    font-size: 35px;
+    text-align: center;
+    color: aliceblue;
+    margin: 0;
+}
+
+/* Book List Styling */
+.book-list {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    margin-top: 100px; /* To avoid overlap with the header */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Individual Book Styling */
+.book {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.book img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.book-details {
+    flex: 1;
+}
+
+.book-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.book-details p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .book-list {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .book img {
+        width: 80px;
+        height: 120px;
+    }
+}

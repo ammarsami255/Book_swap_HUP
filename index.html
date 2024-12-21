@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Swapping Hub</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <p>Book Swapping Hub</p>
+    </div>
+
+    <div class="cont" id="login-form">
+        <h2>Login</h2>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+            <button onclick="login()">Login</button>
+        </div>
+        <p>Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Register here</a></p>
+    </div>
+
+    <div class="cont" id="register-form" style="display: none;">
+        <h2>Register</h2>
+        <div>
+            <label for="new-username">Username</label>
+            <input type="text" name="new-username" id="new-username" required>
+        </div>
+        <div>
+            <label for="new-password">Password</label>
+            <input type="password" name="new-password" id="new-password" required>
+        </div>
+        <div>
+            <button onclick="register()">Register</button>
+        </div>
+        <p>Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Login here</a></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

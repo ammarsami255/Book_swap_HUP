@@ -1,0 +1,104 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Use modern font */
+    background-color: #f4f4f4;
+    padding-top: 80px; /* Space for the fixed header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    color: #333; /* Dark gray text */
+}
+
+/* Header Styling */
+.header {
+    position: fixed;
+    padding: 20px;
+    width: 100%;
+    background-color: #d75246;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Keeps the header on top */
+}
+
+.header p {
+    font-size: 35px;
+    text-align: center;
+    color: aliceblue;
+    margin: 0;
+}
+
+/* Main Form Container */
+.cont {
+    background-color: #fff;
+    width: 100%;
+    max-width: 280px; /* Limit form width */
+    padding: 30px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Styling */
+.cont label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #555; /* Darker text for labels */
+}
+
+.cont input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.cont input:focus {
+    outline: none;
+    border-color: #d75246; /* Change border on focus */
+    box-shadow: 0 0 5px rgba(215, 82, 70, 0.5); /* Soft glow effect */
+}
+
+/* Button Styling */
+.cont button {
+    padding: 12px 20px;
+    background-color: #d75246;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cont button:hover {
+    background-color: #b8433e; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.cont button:active {
+    background-color: #9e3a35; /* Darker shade on click */
+    transform: translateY(0); /* Reset the lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .cont {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .header p {
+        font-size: 28px;
+    }
+}

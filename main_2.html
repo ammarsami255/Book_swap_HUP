@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="main_2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <p>Book Swapping Hub</p>
+    </div>
+
+    <div class="book-list">
+        <h2>Available Books</h2>
+        <div id="books-container">
+            <!-- Books will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to display the books from localStorage
+        window.onload = function() {
+            const books = JSON.parse(localStorage.getItem("books")) || [];
+            const booksContainer = document.getElementById("books-container");
+
+            if (books.length > 0) {
+                books.forEach((book) => {
+                    const bookElement = document.createElement("div");
+                    bookElement.classList.add("book");
+
+                    const bookPhoto = document.createElement("img");
+                    bookPhoto.src = book.photo; // Base64 image
+                    bookPhoto.alt = book.name;
+
+                    const bookDetails = document.createElement("div");
+                    bookDetails.classList.add("book-details");
+
+                    const bookName = document.createElement("h3");
+                    bookName.innerText = book.name;
+
+                    const bookDesc = document.createElement("p");
+                    bookDesc.innerText = book.description;
+
+                    const bookType = document.createElement("p");
+                    bookType.innerText = `Type: ${book.type}`;
+
+                    const bookSubmittedBy = document.createElement("p");
+                    bookSubmittedBy.innerText = `Submitted by: ${book.submittedBy}`;
+
+                    const bookDate = document.createElement("p");
+                    bookDate.innerText = `Submitted on: ${book.date}`; // Display the submission date
+
+                    bookDetails.appendChild(bookName);
+                    bookDetails.appendChild(bookDesc);
+                    bookDetails.appendChild(bookType);
+                    bookDetails.appendChild(bookSubmittedBy);
+                    bookDetails.appendChild(bookDate); // Adding the submission date
+
+                    bookElement.appendChild(bookPhoto);
+                    bookElement.appendChild(bookDetails);
+                    booksContainer.appendChild(bookElement);
+                });
+            } else {
+                const noBooksMessage = document.createElement("p");
+                noBooksMessage.innerText = "No books available at the moment.";
+                booksContainer.appendChild(noBooksMessage);
+            }
+        };
+    </script>
+</body>
+</html>
