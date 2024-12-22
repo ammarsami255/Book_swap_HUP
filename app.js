@@ -24,7 +24,7 @@ function login() {
         const user = users.find(u => u.username === username && u.password === password);
 
         if (user) {
-            window.location.href = "main_1.html";
+            window.location.href = "goto.html";
         } else {
             alert('Invalid username or password');
         }
