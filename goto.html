@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Buttons with Header</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Header Styling */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #d75246;
+            padding: 20px;
+            text-align: center;
+            color: aliceblue;
+            font-size: 24px;
+            z-index: 1000;
+        }
+
+        /* Button Container */
+        .button-container {
+            margin-top: 80px; /* Space for the fixed header */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Button Styling */
+        button {
+            padding: 12px 20px;
+            background-color: #d75246;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #b8433e;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #9e3a35;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Book Swapping Hub
+    </div>
+
+    <div class="button-container">
+        <button onclick="actionOne()">Swap ?</button>
+        <button onclick="actionTwo()">Search ?</button>
+        <button onclick="About()">About Us</button>
+
+    </div>
+
+    <script>
+        function actionOne() {
+            document.location.href='main_1.html';
+        }
+
+        function actionTwo() {
+            document.location.href='main_2.html';
+                }
+                function About() {
+            document.location.href='AboutUs.html';
+                }
+    </script>
+</body>
+</html>
